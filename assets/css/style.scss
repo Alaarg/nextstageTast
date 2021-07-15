@@ -1,0 +1,363 @@
+$min_color: #fb9b1c;
+$extra_color: #9b7757;
+$text_color: #343a40;
+
+@font-face {
+  font-family: "Sofia-Pro";
+  src: url(../font/Sofia-Pro.otf);
+}
+
+body {
+  font-family: "Sofia-Pro";
+  color: #3a3e42;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.main_color {
+  color: $min_color;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.dv_bkground_contain {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.dv_bkground_cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+a {
+  color: $text_color;
+  text-decoration: none;
+  &:hover {
+    color: $text_color;
+    text-decoration: none;
+  }
+}
+
+.min_botton {
+  background-color: $min_color;
+  border-color: $min_color;
+  margin: auto;
+  display: block;
+  padding: 10px 30px;
+  &:hover {
+    background-color: transparent;
+    border-color: $min_color;
+    color: #000;
+  }
+}
+// ......................end global css  ..................
+
+// ------- top Bar -------
+
+.topbar {
+  background: #000;
+  min-height: 40px;
+  color: #fff;
+  &__contain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    &--item {
+      &.schial {
+        i {
+          margin: 0 10px;
+          font-size: 18px;
+        }
+      }
+      &.registration {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// ------- navbar -------
+.navbar_veg {
+  .navsection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .call_us {
+      display: flex;
+      &--text {
+        font-size: 0.8em;
+      }
+      &--icon {
+        margin-left: 10px;
+        font-size: 1.8em;
+        margin-top: -5px;
+      }
+    }
+  }
+  .navigation {
+    border: solid #eee;
+    border-width: 1px 0 1px 0;
+    .nav_list {
+      display: flex;
+      justify-content: center;
+      ul {
+        display: flex;
+        li {
+          margin: 0 20px;
+          padding: 15px;
+          border-bottom: 2px solid transparent;
+
+          &:hover {
+            border-bottom: 2px solid #000;
+          }
+        }
+      }
+    }
+  }
+  .bar {
+    display: none;
+    font-size: 20px;
+  }
+  .close_nav {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 18px;
+    // display: none;
+  }
+  .nav_overly {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    display: none;
+  }
+  .nav_overly.active{
+    display: block;
+  }
+}
+// ------- slider -------
+
+// ------- features -------
+
+.features {
+  margin: 25px;
+  &_box {
+    min-height: 370px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    a {
+      color: #fff;
+      display: inline-block;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 2px solid #fff;
+      background-color: transparent;
+      z-index: 2;
+    }
+  }
+  .features_box_text {
+    position: relative;
+    z-index: 5;
+    h2 {
+      font-size: 35px;
+    }
+  }
+}
+
+// ------- about -------
+.about_us {
+  .col {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .about_logo {
+    margin: auto;
+    display: block;
+    text-align: center;
+  }
+}
+
+// ------- servicess -------
+
+.servicess {
+  background: #eee;
+  margin: 25px 0;
+  padding: 50px 0;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+  .serv_item {
+    text-align: center;
+
+    &--txt {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px;
+    }
+    &--des {
+      font-size: 16px;
+    }
+  }
+}
+
+// ------- servicess -------
+
+.contact_us {
+  margin: 25px 0;
+  padding: 50px 0;
+  h1 {
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  .contact_img {
+    min-height: 435px;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 30px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: url(../media/logo.png);
+      background-size: cover;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .contact_us_form {
+    margin-top: 25px;
+
+    input {
+      height: 50px;
+    }
+  }
+}
+
+// ------- banner_box -------
+.banner_box {
+  min-height: 450px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  &::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  &::after {
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    bottom: 15px;
+    right: 15px;
+    border: 2px solid #fff;
+  }
+  h1 {
+    font-weight: bold;
+  }
+  .banner_text {
+    position: relative;
+    z-index: 5;
+  }
+}
+
+// ------- footer -------
+.footer {
+  padding: 50px 0;
+  background-color: #eee;
+  &_col {
+    ul {
+      li {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      i {
+        font-size: 16px;
+        margin-right: 10px;
+        color: $min_color;
+      }
+    }
+  }
+  &_title {
+    h4 {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+  }
+  a:hover {
+    color: $min_color;
+  }
+
+  &_social {
+    i {
+      padding: 10px;
+      border: 1px solid #000;
+      border-radius: 50%;
+      color: #000;
+      margin: 5px;
+      transition: 0.3s;
+      &:hover {
+        color: $min_color;
+        border-color: $min_color;
+      }
+    }
+  }
+}
